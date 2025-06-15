@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Equipe - FatecAGRO</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f5ed;
+      color: #2c3e50;
+    }
+
+    header {
+      background-color: #007f5f;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .btn-voltar-top {
+      background-color: white;
+      color: #007f5f;
+      padding: 8px 18px;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.95em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .btn-voltar-top:hover {
+      background-color: #e6f2ec;
+      transform: translateY(-2px);
+    }
+
+    .team-section {
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .team-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #007f5f;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .team-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      max-width: 260px;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .team-card h3 {
+      font-size: 1.2em;
+      margin: 10px 0 5px;
+    }
+
+    .team-card p {
+      font-size: 0.9em;
+      color: #555;
+      word-break: break-word;
+      user-select: text;
+      margin: 0;
+    }
+
+    @media (max-width: 400px) {
+      .team-card img {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="logo">🌿 FatecAGRO</span>
+    <a href="index.php" class="btn-voltar-top">← Voltar</a>
+  </header>
+
+  <section class="team-section">
+    <h2>Conheça Nossa Equipe de Desenvolvimento</h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="equipe/joao.png" alt="João Victor Leal dos Santos" />
+        <h3>João Victor Leal dos Santos</h3>
+        <p>joaoleals24@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/isabelly.jfif" alt="Isabelly de Oliveira Santos Albuquerque" />
+        <h3>Isabelly de Oliveira Santos Albuquerque</h3>
+        <p>isaoliveiralbuquerque@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/Luis.jfif" alt="Luis Guilherme de Souza Faria" />
+        <h3>Luis Guilherme de Souza Faria</h3>
+        <p>Luis.faria1609@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/Pedro.png" alt="Pedro Henrique Leme de Almeida" />
+        <h3>Pedro Henrique Leme de Almeida</h3>
+        <p>pedro.almeida38@fatec.sp.gov.br</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/Ryan.jfif" alt="Ryan Jose Antunes de Oliveira" />
+        <h3>Ryan Jose Antunes de Oliveira</h3>
+        <p>ryan.antunes.msi@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/Marcos.jfif" alt="Marcos Vinicius da Silva Gaca" />
+        <h3>Marcos Vinicius da Silva Gaca</h3>
+        <p>gracamarcos10@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/Victor.jfif" alt="Victor Emmanuel Tertuliano Fragoso de Meira" />
+        <h3>Victor Emmanuel Tertuliano Fragoso de Meira</h3>
+        <p>victoremmanuelmeira@gmail.com</p>
+      </div>
+
+      <div class="team-card">
+        <img src="equipe/rafael.jpg" alt="Kelli Aparecida Pereira da Silva" />
+        <h3>Kelli Aparecida Pereira da Silva</h3>
+        <p>kelli.silva@fatec.sp.gov.br</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

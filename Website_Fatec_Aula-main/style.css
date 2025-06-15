@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3f5ed;
+    color: #1e1e1e;
+  }
+  
+  header {
+  background-color: #fff;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.header-content .logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.header-content .search-form {
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 auto;
+}
+  
+  /* Barra de pesquisa */
+  .search-form {
+    position: relative;
+    width: 180px; /* tamanho inicial maior */
+    transition: width 0.4s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background-color: white;
+    border: 2px solid #ccc;
+  }
+  
+  .search-form:focus-within {
+    width: 320px; /* tamanho expandido ao focar */
+    border-color: #007f5f;
+    box-shadow: 0 0 0 3px rgba(0, 127, 95, 0.1);
+  }
+  
+  .search-form input {
+    border: none;
+    outline: none;
+    padding: 10px 12px 10px 38px;
+    font-size: 16px;
+    width: 100%;
+    background: transparent;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 18px;
+    color: #888;
+    pointer-events: none;
+  }
+  
+  
+  
+  .btn-outline,
+  .btn-fill {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #007f5f;
+    background-color: transparent;
+    color: #007f5f;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-outline:hover,
+  .btn-fill:hover {
+    background-color: #007f5f;
+    color: white;
+  }
+  
+  .btn-fill {
+    background-color: #007f5f;
+    color: white;
+  }
+  
+  /* Hero com efeito parallax */
+  .hero-with-bg {
+    background: url('img/tree.jpg') center/cover no-repeat fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    position: relative;
+    color: #fff;
+  }
+  
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .hero-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .hero-overlay p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #eee;
+  }
+  
+  /* Seção de anúncios */
+  .ads-section {
+    padding: 60px 40px;
+    background-color: #f0f0f0;
+  }
+  
+  .ads-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .ads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .ad-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  .ad-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .ad-card h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: #2c3e50;
+  }
+  
+  .ad-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .ad-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Rodapé */
+  .footer {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .footer .logo-slider span {
+    display: inline-block;
+    margin: 0 15px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .footer-nav {
+    margin-top: 30px;
+  }
+  
+  .footer-nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #007f5f;
+    font-weight: 500;
+  }
+  
+  .footer-copy {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+  }
+  
