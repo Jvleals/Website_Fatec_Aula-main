@@ -120,7 +120,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=arvores", "root", "");
           <img src="<?= $imagem ?>" alt="<?= htmlspecialchars($nome) ?>">
           <h3><?= htmlspecialchars($nome) ?></h3>
           <p><?= substr($descricao, 0, 100) ?>...</p>
-          <a class="btn-fill" href="detalhes.php?id=<?= $id ?>">Ver Mais</a>
+          <a class="btn-fill" href="exibicao.php?id=<?= $id ?>">Ver Mais</a>
         </div>
       <?php endwhile; ?>
     </div>
