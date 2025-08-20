@@ -14,238 +14,211 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Resultado da Busca</title>
-<style>
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 30px 20px;
-    color: #222;
-    line-height: 1.5;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: #2d6a4f;
-    user-select: none;
-  }
-
-  .btn-voltar {
-    background-color: #2d6a4f;
-    color: white;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgb(45 106 79 / 0.25);
-    transition: background-color 0.25s ease;
-  }
-  .btn-voltar:hover {
-    background-color: #1b4332;
-  }
-
-  .search-form {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-grow: 1;
-    max-width: 350px;
-  }
-
-  .search-form input[type="text"] {
-    width: 100%;
-    padding: 10px 16px;
-    border: 2px solid #a7c4a0;
-    border-radius: 9999px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    outline-offset: 2px;
-  }
-  .search-form input[type="text"]:focus {
-    border-color: #2d6a4f;
-    outline: none;
-  }
-
-  .search-icon {
-    font-size: 22px;
-    color: #2d6a4f;
-    user-select: none;
-  }
-
-  main h1 {
-    font-weight: 700;
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: #1b4332;
-  }
-
-  .table-wrapper {
-    overflow-x: auto;
-  }
-
-  table {
-    width: 100%;
-    min-width: 1200px;
-    border-collapse: separate;
-    border-spacing: 0 12px;
-  }
-
-  thead tr {
-    background-color: #2d6a4f;
-    color: white;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  thead th {
-    padding: 14px 16px;
-    font-size: 13px;
-    white-space: nowrap;
-  }
-
-  tbody tr {
-    background-color: white;
-    box-shadow: 0 2px 6px rgb(45 106 79 / 0.1);
-    transition: box-shadow 0.3s ease;
-    border-radius: 8px;
-  }
-  tbody tr:hover {
-    box-shadow: 0 4px 12px rgb(45 106 79 / 0.3);
-  }
-
-  tbody td {
-    padding: 14px 16px;
-    vertical-align: middle;
-    font-size: 14px;
-    color: #444;
-    max-width: 140px;
-    word-wrap: break-word;
-  }
-
-  tbody td img {
-    max-width: 90px;
-    max-height: 90px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgb(45 106 79 / 0.15);
-  }
-
-  .botoes-acao {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .botoes-acao a,
-  .botoes-acao button {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    color: white;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
-    transition: background-color 0.25s ease;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .btn-editar {
-    background-color: #40916c;
-  }
-  .btn-editar:hover {
-    background-color: #2d6a4f;
-  }
-
-  .btn-excluir {
-    background-color: #d00000;
-  }
-  .btn-excluir:hover {
-    background-color: #9b0000;
-  }
-
-  p {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 40px;
-    color: #666;
-  }
-
-  @media (min-width: 768px) {
-    .botoes-acao {
-      flex-direction: row;
-    }
-  }
-
-  /* Responsividade geral para celular */
-  @media (max-width: 900px) {
-    thead {
-      display: none;
+  <meta charset="UTF-8">
+  <title>Resultado da Busca - Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
-    table, tbody, tr, td {
-      display: block;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2d6a4f;
+    }
+
+    .btn-voltar {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-voltar:hover {
+      background-color: #1b4332;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 8px;
+      flex-grow: 1;
+      max-width: 400px;
+    }
+
+    .search-form input[type="text"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #a7c4a0;
+      border-radius: 9999px;
+      font-size: 16px;
+    }
+
+    .search-icon {
+      font-size: 22px;
+      color: #2d6a4f;
+      user-select: none;
+      align-self: center;
+    }
+
+    main h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #1b4332;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
       width: 100%;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    thead tr {
+      background-color: #2d6a4f;
+      color: white;
+    }
+
+    thead th {
+      padding: 10px;
+      text-align: left;
+      font-size: 13px;
+    }
+
     tbody tr {
-      margin-bottom: 25px;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-      border-radius: 10px;
-      padding: 15px 20px;
       background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
     }
 
     tbody td {
-      padding: 10px 10px;
-      text-align: right;
+      padding: 10px;
       font-size: 14px;
-      position: relative;
-      max-width: none;
-      word-wrap: normal;
-      border: none;
+      word-wrap: break-word;
     }
 
-    tbody td::before {
-      content: attr(data-label);
-      float: left;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #2d6a4f;
-      letter-spacing: 0.05em;
+    tbody td img {
+      max-width: 80px;
+      max-height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
     }
 
     .botoes-acao {
-      justify-content: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
-  }
-</style>
+
+    .botoes-acao a,
+    .botoes-acao button {
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-editar {
+      background-color: #40916c;
+    }
+
+    .btn-editar:hover {
+      background-color: #2d6a4f;
+    }
+
+    .btn-excluir {
+      background-color: #d00000;
+    }
+
+    .btn-excluir:hover {
+      background-color: #9b0000;
+    }
+
+    @media (max-width: 900px) {
+      thead {
+        display: none;
+      }
+
+      table, tbody, tr, td {
+        display: block;
+        width: 100%;
+      }
+
+      tbody tr {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: white;
+      }
+
+      tbody td {
+        padding: 10px 8px;
+        text-align: right;
+        position: relative;
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #2d6a4f;
+        font-size: 13px;
+      }
+
+      .botoes-acao {
+        align-items: flex-end;
+      }
+
+      .botoes-acao a,
+      .botoes-acao button {
+        width: 100%;
+      }
+    }
+
+    p.no-result {
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <a href="index.php" class="btn-voltar">&#8592; Voltar</a>
+  <a href="dashboard.php" class="btn-voltar">← Voltar</a>
   <div class="logo">🌿 FatecAGRO</div>
-  <form action="pesquisar.php" method="GET" class="search-form" role="search" aria-label="Busca">
+  <form action="visualizar_admin.php" method="GET" class="search-form" role="search">
     <input type="text" name="q" placeholder="Pesquisar..." value="<?= htmlspecialchars($busca) ?>" autocomplete="off" />
-    <span class="search-icon" aria-hidden="true">&#128269;</span>
+    <span class="search-icon">&#128269;</span>
   </form>
 </header>
 
@@ -254,7 +227,7 @@ $result = $conn->query($sql);
 
   <?php if ($result && $result->num_rows > 0): ?>
   <div class="table-wrapper">
-    <table role="table" aria-label="Tabela de resultados">
+    <table>
       <thead>
         <tr>
           <th>Imagem</th>
@@ -264,10 +237,10 @@ $result = $conn->query($sql);
           <th>Classificação</th>
           <th>Espaço</th>
           <th>Nº Indivíduos</th>
-          <th>Estado Fitossanitário</th>
-          <th>Estado do Tronco</th>
-          <th>Estado das Raízes</th>
-          <th>Danos no Pavimento</th>
+          <th>Fitossanitário</th>
+          <th>Tronco</th>
+          <th>Raízes</th>
+          <th>Pavimento</th>
           <th>Fiação</th>
           <th>Sinalização</th>
           <th>DAP</th>
@@ -284,7 +257,7 @@ $result = $conn->query($sql);
         <tr>
           <td data-label="Imagem">
             <?php if (!empty($row['imagem'])): ?>
-              <img src="imagens/<?= htmlspecialchars($row['imagem']) ?>" alt="<?= htmlspecialchars($row['nome_popular']) ?>" />
+              <img src="imagens/<?= htmlspecialchars($row['imagem']) ?>" alt="<?= htmlspecialchars($row['nome_popular']) ?>">
             <?php else: ?>
               Sem imagem
             <?php endif; ?>
@@ -295,10 +268,10 @@ $result = $conn->query($sql);
           <td data-label="Classificação"><?= htmlspecialchars($row['classificacao']) ?></td>
           <td data-label="Espaço"><?= htmlspecialchars($row['espaco_arvore']) ?></td>
           <td data-label="Nº Indivíduos"><?= htmlspecialchars($row['numero_individuos']) ?></td>
-          <td data-label="Estado Fitossanitário"><?= htmlspecialchars($row['estado_fitossanitario']) ?></td>
-          <td data-label="Estado do Tronco"><?= htmlspecialchars($row['estado_tronco']) ?></td>
-          <td data-label="Estado das Raízes"><?= htmlspecialchars($row['estado_raizes']) ?></td>
-          <td data-label="Danos no Pavimento"><?= htmlspecialchars($row['danos_pavimento']) ?></td>
+          <td data-label="Fitossanitário"><?= htmlspecialchars($row['estado_fitossanitario']) ?></td>
+          <td data-label="Tronco"><?= htmlspecialchars($row['estado_tronco']) ?></td>
+          <td data-label="Raízes"><?= htmlspecialchars($row['estado_raizes']) ?></td>
+          <td data-label="Pavimento"><?= htmlspecialchars($row['danos_pavimento']) ?></td>
           <td data-label="Fiação"><?= htmlspecialchars($row['fiacao']) ?></td>
           <td data-label="Sinalização"><?= htmlspecialchars($row['sinalizacao']) ?></td>
           <td data-label="DAP"><?= htmlspecialchars($row['dap']) ?></td>
@@ -308,10 +281,10 @@ $result = $conn->query($sql);
           <td data-label="Localização"><?= htmlspecialchars($row['localizacao']) ?></td>
           <td data-label="Descrição"><?= htmlspecialchars($row['descricao']) ?></td>
           <td data-label="Ações" class="botoes-acao">
-            <a href="editar.php?id=<?= $row['id'] ?>" class="btn-editar" aria-label="Editar <?= htmlspecialchars($row['nome_popular']) ?>">Editar</a>
+            <a href="editar.php?id=<?= $row['id'] ?>" class="btn-editar">Editar</a>
             <form action="excluir.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir?');">
-              <input type="hidden" name="id" value="<?= $row['id'] ?>" />
-              <button type="submit" class="btn-excluir" aria-label="Excluir <?= htmlspecialchars($row['nome_popular']) ?>">Excluir</button>
+              <input type="hidden" name="id" value="<?= $row['id'] ?>">
+              <button type="submit" class="btn-excluir">Excluir</button>
             </form>
           </td>
         </tr>
@@ -320,7 +293,7 @@ $result = $conn->query($sql);
     </table>
   </div>
   <?php else: ?>
-    <p>Nenhum resultado encontrado para "<strong><?= htmlspecialchars($busca) ?></strong>".</p>
+    <p class="no-result">Nenhum resultado encontrado para "<strong><?= htmlspecialchars($busca) ?></strong>".</p>
   <?php endif; ?>
 </main>
 
