@@ -114,7 +114,7 @@ if (!isset($_SESSION['login']) || !isset($_SESSION['cod'])) {
       <div class="admin-card">
         <h3>Analisar Mensagens</h3>
         <p>Veja mensagens e publicações feitas por usuários.</p>
-        <a href="analisar.php">Acessar</a>
+        <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AdBytiOvb6KW7phcudzu3K1nlZBICkBSAX8kZ1etDuD4Tn8xjNFg9txm3CVxDVf95dq672TpXwDaag&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S170210527%3A1755780267412895">Acessar</a>
       </div>
     </section>
   </main>

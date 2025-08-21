@@ -18,7 +18,6 @@ $arvore = $result->fetch_assoc();
   <meta charset="UTF-8" />
   <title>Detalhes da Árvore</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,6 +97,30 @@ $arvore = $result->fetch_assoc();
       color: #555;
     }
 
+    .descricao-box {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #eefaf4;
+      border-left: 6px solid #007f5f;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .descricao-box h2 {
+      margin-top: 0;
+      color: #007f5f;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .descricao-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      white-space: pre-line;
+    }
+
     .btn-voltar {
       display: inline-block;
       margin-top: 30px;
@@ -145,15 +168,19 @@ $arvore = $result->fetch_assoc();
 
         <ul>
           <li><strong>Nome Científico:</strong> <em><?= htmlspecialchars($arvore['nome_cientifico'] ?? 'Não informado') ?></em></li>
-          <li><strong>Bioma:</strong> <?= htmlspecialchars($arvore['bioma'] ?? 'Não informado') ?></li>
           <li><strong>Classificação:</strong> <?= htmlspecialchars($arvore['classificacao'] ?? 'Não informado') ?></li>
           <li><strong>Espaço da Árvore:</strong> <?= htmlspecialchars($arvore['espaco_arvore'] ?? 'Não informado') ?></li>
           <li><strong>Nativa:</strong> <?= htmlspecialchars($arvore['nativa'] ?? 'Não informado') ?></li>
           <li><strong>Medicinal:</strong> <?= $arvore['medicinal'] ? 'Sim' : 'Não' ?></li>
           <li><strong>Tóxica:</strong> <?= $arvore['venenosa'] ? 'Sim' : 'Não' ?></li>
-          <li><strong>Descrição/Curiosidade:</strong><br><?= nl2br(htmlspecialchars($arvore['descricao'] ?? 'Sem descrição')) ?></li>
           <li><strong>Localização:</strong> <?= htmlspecialchars($arvore['localizacao'] ?? 'Não informada') ?></li>
         </ul>
+      </div>
+
+      <!-- Caixa de descrição -->
+      <div class="descricao-box">
+        <h2>📌 Descrição / Curiosidade</h2>
+        <p><?= nl2br(htmlspecialchars($arvore['descricao'] ?? 'Sem descrição disponível.')) ?></p>
       </div>
 
       <a href="index.php" class="btn-voltar">← Voltar</a>

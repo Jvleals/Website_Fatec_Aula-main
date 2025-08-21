@@ -80,6 +80,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=arvores", "root", "");
     <a href="index.php">🏠 Início</a>
     <a href="login.php"><img src="img/login-icon.png" alt="Login">Login Admin</a>
     <a href="Equipe.html">👥 Equipe</a>
+    <a href="contato.php">📧Contato</a>
   </div>
 
  <header>
