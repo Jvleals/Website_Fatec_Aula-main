@@ -8,7 +8,7 @@
 <body>
 
   <header>
-    <div class="logo">🌿 FatecAGRO</div>
+    <div class="logo">🌿 FatecAmbiental</div>
 
     <form class="search-form" action="pesquisar.php" method="GET">
       <input type="text" name="q" placeholder="Buscar árvore..." required />

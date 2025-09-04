@@ -43,19 +43,12 @@ $result = $conn->query($sql);
       font-size: 24px;
       font-weight: bold;
       color: #2d6a4f;
-    }
-
-    .btn-voltar {
-      background-color: #2d6a4f;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
+      cursor: pointer;
     }
 
-    .btn-voltar:hover {
-      background-color: #1b4332;
+    .logo:hover {
+      text-decoration: underline;
     }
 
     .search-form {
@@ -214,17 +207,14 @@ $result = $conn->query($sql);
 <body>
 
 <header>
-  <a href="dashboard.php" class="btn-voltar">← Voltar</a>
-  <div class="logo">🌿 FatecAGRO</div>
-  <form action="visualizar_admin.php" method="GET" class="search-form" role="search">
+  <a href="index.php" class="logo">🌿 FatecAmbiental</a>
+  <form action="consultar.php" method="GET" class="search-form" role="search">
     <input type="text" name="q" placeholder="Pesquisar..." value="<?= htmlspecialchars($busca) ?>" autocomplete="off" />
     <span class="search-icon">&#128269;</span>
   </form>
 </header>
 
 <main>
-  <h1>Resultado da busca por: "<?= htmlspecialchars($busca) ?>"</h1>
-
   <?php if ($result && $result->num_rows > 0): ?>
   <div class="table-wrapper">
     <table>

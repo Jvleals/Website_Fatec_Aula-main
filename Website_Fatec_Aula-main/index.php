@@ -7,7 +7,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=arvores", "root", "");
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>FatecAGRO</title>
+  <title>FatecAmbiental</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* Sidebar à direita */
@@ -100,7 +100,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=arvores", "root", "");
   <main class="hero-with-bg">
     <div class="hero-overlay">
       <div class="hero-text">
-        <h1>Bem-vindo ao FatecAGRO 🌿</h1>
+        <h1>Bem-vindo a FatecAmbiental🌿</h1>
         <p>Juntos pela preservação do meio ambiente e um futuro sustentável.</p>
       </div>
     </div>
@@ -130,22 +130,14 @@ $pdo = new PDO("mysql:host=localhost;dbname=arvores", "root", "");
   <footer class="footer">
     <p class="footer-title">Parceiros:</p>
     <div class="logo-slider">
-      <span>Nextflows</span>
-      <span>Fancywear</span>
-      <span>DataBites</span>
-      <span>ExDone</span>
-      <span>Arktico</span>
-      <span>PayScale</span>
+      <span>Fatec Itapetininga</span>
     </div>
 
     <div class="footer-nav">
-      <a href="#">Our Focus</a>
-      <a href="#">Project</a>
-      <a href="#">News & Events</a>
-      <a href="#">About Us</a>
+      <a href="https://fatecitapetininga.edu.br/">Sobre a instituição</a>
     </div>
 
-    <p class="footer-copy">© <?= date('Y') ?> FatecAGRO. Todos os direitos reservados.</p>
+    <p class="footer-copy">© <?= date('Y') ?> FatecAmbiental. Todos os direitos reservados.</p>
   </footer>
 
   <script>

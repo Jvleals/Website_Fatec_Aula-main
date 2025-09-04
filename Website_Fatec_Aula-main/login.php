@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <title>Login - FatecAGRO</title>
+  <title>Login - FatecAmbiental</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     .login-container {
@@ -138,8 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <header>
-  <a href="index.php" class="logo">🌿 FatecAGRO</a>
-  <button class="btn-outline" onclick="history.back()">Voltar</button>
+  <a href="index.php" class="logo">🌿 FatecAmbiental</a>
 </header>
 
   <div class="login-container">

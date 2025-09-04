@@ -107,7 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Editar Árvore</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Seu CSS aqui (igual ao original) */
     form {
       max-width: 800px;
       margin: 20px auto;
@@ -136,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     button {
       margin-top: 15px;
       padding: 10px 20px;
-      background: #007bff;
+      background: #2d6a4f; /* verde principal */
       color: white;
       border: none;
       border-radius: 5px;
@@ -145,35 +144,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background: #0056b3;
+      background: #1b4332; /* verde escuro no hover */
     }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      background-color: #e0f2e9;
-      border-bottom: 2px solid #007bff;
+      background-color: #e0f2e9; /* verde claro */
+      border-bottom: 2px solid #2d6a4f; /* verde escuro */
       margin-bottom: 30px;
     }
     .logo {
       font-size: 24px;
       font-weight: bold;
-      color: #007bff;
+      color: #2d6a4f; /* verde escuro */
       text-decoration: none;
     }
     .btn-outline {
       padding: 8px 16px;
       background: transparent;
-      border: 2px solid #007bff;
-      color: #007bff;
+      border: 2px solid #2d6a4f;
+      color: #2d6a4f;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease;
       font-weight: 600;
     }
     .btn-outline:hover {
-      background-color: #007bff;
+      background-color: #2d6a4f;
       color: white;
     }
     img {
@@ -187,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <header>
-    <a href="index.php" class="logo">🌿 FatecAGRO</a>
+    <a href="index.php" class="logo">🌿 FatecAmbiental</a>
     <button class="btn-outline" onclick="history.back()">Voltar</button>
   </header>
 
@@ -251,15 +250,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <label>Imagem Atual</label>
     <?php if (!empty($dados['imagem'])): ?>
-      <img src="uploads/<?= htmlspecialchars($dados['imagem']) ?>" alt="Imagem da árvore" />
+      <img src="imagens/<?= htmlspecialchars($dados['imagem']) ?>" alt="Imagem da árvore" />
     <?php else: ?>
       <p>Sem imagem cadastrada.</p>
     <?php endif; ?>
 
     <label>Alterar Imagem</label>
     <input type="file" name="imagem" accept="image/*" />
-
-    <button type="submit">Salvar Alterações</button>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <button type="submit">Salvar Alterações</button>
+      <button type="button" onclick="abrirQrCode(<?= $id ?>)">Ver QR Code</button>
+    </div>
   </form>
+
+  <script>
+  function abrirQrCode(id) {
+      window.open(
+          'qr_code.php?id=' + id,
+          'popupQr',
+          'width=400,height=450,scrollbars=no,resizable=no'
+      );
+  }
+  </script>
 </body>
 </html>

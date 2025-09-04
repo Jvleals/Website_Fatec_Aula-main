@@ -19,7 +19,7 @@ if (!isset($_SESSION['login']) || !isset($_SESSION['cod'])) {
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard Admin - FatecAGRO</title>
+  <title>Dashboard Admin - FatecAmbiental</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .admin-actions {
@@ -91,7 +91,7 @@ if (!isset($_SESSION['login']) || !isset($_SESSION['cod'])) {
 </head>
 <body>
   <header>
-    <div class="logo">🌿 Painel do Administrador - FatecAGRO</div>
+    <div class="logo">🌿 Painel do Administrador - FatecAmbiental</div>
     <form method="post" style="position:absolute; top: 20px; right: 30px;">
       <button type="submit" name="logout" class="logout-btn">Sair</button>
     </form>

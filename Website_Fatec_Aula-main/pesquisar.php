@@ -24,7 +24,7 @@ $result = $conn->query($sql);
 <body>
 
 <header>
-  <a href="index.php" class="logo" aria-label="Página inicial FatecAGRO">🌿 FatecAGRO</a>
+  <a href="index.php" class="logo" aria-label="Página inicial FatecAmbiental">🌿 FatecAGRO</a>
 
   <form action="pesquisar.php" method="GET" class="search-form" role="search" aria-label="Busca de árvores">
     <input

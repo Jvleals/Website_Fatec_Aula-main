@@ -10,6 +10,9 @@ $stmt->execute();
 
 $result = $stmt->get_result();
 $arvore = $result->fetch_assoc();
+
+// Gera a URL atual da página
+$url_pagina = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . "?id=" . $id;
 ?>
 
 <!DOCTYPE html>
@@ -136,6 +139,28 @@ $arvore = $result->fetch_assoc();
       background-color: #025d46;
     }
 
+    .qr-code-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .qr-code-container h2 {
+      color: #007f5f;
+      font-size: 1.3rem;
+    }
+
+    .qr-code-container img {
+      margin-top: 10px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .qr-code-container p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
     @media (max-width: 768px) {
       .arvore-detalhes {
         flex-direction: column;
@@ -151,7 +176,7 @@ $arvore = $result->fetch_assoc();
 <body>
 
 <header>
-  <a href="index.php" class="logo">🌿 FatecAGRO</a>
+  <a href="index.php" class="logo">🌿 FatecAmbiental</a>
 </header>
 
 <main class="exibicao-container">
@@ -167,7 +192,6 @@ $arvore = $result->fetch_assoc();
         />
 
         <ul>
-          <li><strong>Nome Científico:</strong> <em><?= htmlspecialchars($arvore['nome_cientifico'] ?? 'Não informado') ?></em></li>
           <li><strong>Classificação:</strong> <?= htmlspecialchars($arvore['classificacao'] ?? 'Não informado') ?></li>
           <li><strong>Espaço da Árvore:</strong> <?= htmlspecialchars($arvore['espaco_arvore'] ?? 'Não informado') ?></li>
           <li><strong>Nativa:</strong> <?= htmlspecialchars($arvore['nativa'] ?? 'Não informado') ?></li>
@@ -183,7 +207,17 @@ $arvore = $result->fetch_assoc();
         <p><?= nl2br(htmlspecialchars($arvore['descricao'] ?? 'Sem descrição disponível.')) ?></p>
       </div>
 
-      <a href="index.php" class="btn-voltar">← Voltar</a>
+      <!-- Botão Voltar -->
+
+      <!-- QR Code -->
+      <div class="qr-code-container">
+        <h2>📱 Compartilhe esta árvore</h2>
+        <img 
+          src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=<?= urlencode($url_pagina) ?>" 
+          alt="QR Code para esta árvore"
+        />
+        <p>Escaneie o QR Code para acessar esta página</p>
+      </div>
     </div>
   <?php else: ?>
     <div class="card-detalhes">
